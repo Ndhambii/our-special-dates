@@ -1,6 +1,6 @@
 "use client"
 // components/CountdownTimer.tsx
-import { useState, useEffect } from "react";
+import { useState, useEffect, JSX } from "react";
 
 const CountdownTimer: React.FC = () => {
   const [eventName, setEventName] = useState<string>("");
@@ -115,7 +115,7 @@ const CountdownTimer: React.FC = () => {
             value={eventDate}
             onChange={(e) => setEventDate(e.target.value)}
           />
-          <button type="submit"> iniciar </button>
+          <button   type="submit"> iniciar </button>
         </form>
       ) : (
         <>
