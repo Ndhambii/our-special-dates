@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
-
+@import url("https://github.com/frankiefab100/countdown-timer/blob/main/src/img/bg-img.jpg");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,7 +18,7 @@
 }
 
 body {
-  background: url("../img/bg-img.jpg") top center;
+  background: url("https://github.com/frankiefab100/countdown-timer/blob/main/src/img/bg-img.jpg") top center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
