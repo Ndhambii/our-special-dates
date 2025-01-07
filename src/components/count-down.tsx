@@ -1,6 +1,6 @@
 "use client"
 // components/CountdownTimer.tsx
-import { useState, useEffect } from "react";
+import { useState, useEffect, JSX } from "react";
 
 const CountdownTimer: React.FC = () => {
   const [eventName, setEventName] = useState<string>("");
