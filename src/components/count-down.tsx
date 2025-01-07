@@ -115,7 +115,7 @@ const CountdownTimer: React.FC = () => {
             value={eventDate}
             onChange={(e) => setEventDate(e.target.value)}
           />
-          <button type="submit"> iniciar </button>
+          <button   type="submit"> iniciar </button>
         </form>
       ) : (
         <>
