@@ -18,7 +18,7 @@
 }
 
 body {
-  background: url("https://github.com/frankiefab100/countdown-timer/blob/main/src/img/bg-img.jpg") top center;
+  background-image: url('/bg-img.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
