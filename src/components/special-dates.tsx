@@ -4,7 +4,7 @@
 export default function SpecialDates(){
     return(
         <div className="flex flex-col flex-1 h-[calc(100vh-24rem)]">
-            <div className="flex-1 grid grid-cols-2 gap-4 px-8">
+            <div className="flex flex-col justify-center sm:flex-row gap-4 flex-1  ">
             
                 <OurDate eventName="Mêsversário" eventDate="2025-02-07" />
             
@@ -37,7 +37,7 @@ function OurDate({eventName, eventDate}: OurDateProps){
     }
 
     return(
-        <div className="flex flex-col items-center justify-center p-6 bg-white/10 backdrop-blur-sm rounded-lg">
+          <div className="flex-1 bg-white/20 backdrop-blur-sm rounded-lg p-6 flex flex-col items-center justify-center">
 
             <h2 className="text-xl font-semibold text-white mb-2">{eventName}</h2>
 
