@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backdropFilter: {
+        'none': 'none',
+        'blur': 'blur(3px)',
+      },
     },
   },
   plugins: [],
