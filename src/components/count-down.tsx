@@ -9,8 +9,11 @@ const CountdownTimer: React.FC = () => {
   const [timeRemaining, setTimeRemaining] = useState<number>(0);
 
   useEffect(() => {
+
     if (countdownStarted && eventDate) {
+
       const countdownInterval = setInterval(() => {
+
         const currentTime = new Date().getTime();
         const eventTime = new Date(eventDate).getTime();
         let remainingTime = eventTime - currentTime;
@@ -25,12 +28,14 @@ const CountdownTimer: React.FC = () => {
       }, 1000);
 
       return () => clearInterval(countdownInterval);
+
     }
+    
   }, [countdownStarted, eventDate]);
 
   useEffect(() => {
     if (countdownStarted) {
-      document.title = eventName || "Contagem Regrassiva";
+      document.title = eventName || "Our Special Dates";
     }
   }, [countdownStarted, eventName]);
 
@@ -39,20 +44,8 @@ const CountdownTimer: React.FC = () => {
     setCountdownStarted(true);
     localStorage.setItem("eventDate", eventDate);
     localStorage.setItem("eventName", eventName);
-  };
-
-  const handleStopCountdown = (): void => {
-    setCountdownStarted(false);
-    setTimeRemaining(0);
-  };
-
-  const handleResetCountdown = (): void => {
-    setCountdownStarted(false);
-    setEventDate("");
-    setEventName("");
-    setTimeRemaining(0);
-    localStorage.removeItem("eventDate");
-    localStorage.removeItem("eventName");
+    console.log("nome: " + eventName);
+    console.log("data: " + eventDate);
   };
 
   const formatDate = (date: string): string => {
@@ -91,45 +84,14 @@ const CountdownTimer: React.FC = () => {
   return (
     <div className="countdown-timer-container">
       <h2 className="countdown-name jersey-10-regular">
-        {countdownStarted ? eventName : "Contagem Regressiva"}
+        {countdownStarted ? eventName : "Our Special Dates"}
       </h2>
       <p className="countdown-date">
-        --- {countdownStarted && formatDate(eventDate)} ---
+         {countdownStarted && ("---" + formatDate(eventDate) + "---")} 
       </p>
 
-      {!countdownStarted ? (
-        <form className="countdown-form" onSubmit={handleSetCountdown}>
-          <label htmlFor="title">Nome do evento:</label>
-          <input
-            name="title"
-            type="text"
-            placeholder="ex: Meu Aniversário"
-            value={eventName}
-            onChange={(e) => setEventName(e.target.value)}
-          />
-
-          <label htmlFor="date-picker">Data do evento:</label>
-          <input
-            name="date-picker"
-            type="date"
-            value={eventDate}
-            onChange={(e) => setEventDate(e.target.value)}
-          />
-          <button   type="submit"> iniciar </button>
-        </form>
-      ) : (
-        <>
-          <h2 className="countdown-name">
-            ...
-          </h2>
-
-          {formatTime(timeRemaining)}
-          <div className="control-buttons">
-            <button onClick={handleStopCountdown}>Stop</button>
-            <button onClick={handleResetCountdown}>Reset</button>
-          </div>
-        </>
-      )}
+      {formatTime(timeRemaining)}
+       
     </div>
   );
 };
